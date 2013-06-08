@@ -15,6 +15,7 @@
 // Some system headers or GCC predefined macros conflict with identifiers in
 // this file.  Undefine them here.
 #undef mips
+#undef cpu0
 #undef sparc
 
 namespace llvm {
@@ -50,6 +51,8 @@ public:
     mipsel,  // MIPSEL: mipsel, mipsallegrexel
     mips64,  // MIPS64: mips64
     mips64el,// MIPS64EL: mips64el
+    cpu0,    // For Tutorial Backend Cpu0
+    cpu0el,
     msp430,  // MSP430: msp430
     ppc,     // PPC: powerpc
     ppc64,   // PPC64: powerpc64, ppu

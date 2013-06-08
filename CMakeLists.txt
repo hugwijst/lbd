@@ -79,6 +79,7 @@ set(LLVM_ALL_TARGETS
   CppBackend
   Hexagon
   Mips
+  Cpu0
   MBlaze
   MSP430
   NVPTX
