@@ -289,6 +289,7 @@ enum {
   EM_78KOR         = 199, // Renesas 78KOR family
   EM_56800EX       = 200, // Freescale 56800EX Digital Signal Controller (DSC)
   EM_CPU0          = 201, // Document LLVM Backend Tutorial Cpu0
+  EM_RVEX          = 202,
   EM_MBLAZE        = 47787 // Xilinx MicroBlaze
 };
 

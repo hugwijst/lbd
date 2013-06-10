@@ -51,6 +51,7 @@ public:
     mipsel,  // MIPSEL: mipsel, mipsallegrexel
     mips64,  // MIPS64: mips64
     mips64el,// MIPS64EL: mips64el
+    rvex,
     cpu0,    // For Tutorial Backend Cpu0
     cpu0el,
     msp430,  // MSP430: msp430
