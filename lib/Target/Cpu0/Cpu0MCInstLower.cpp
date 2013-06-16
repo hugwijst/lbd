@@ -48,7 +48,6 @@ MCOperand Cpu0MCInstLower::LowerSymbolOperand(const MachineOperand &MO,
 //  format=false (global var in .sdata).
   case Cpu0II::MO_GPREL:     Kind = MCSymbolRefExpr::VK_Cpu0_GPREL; break;
 
-  case Cpu0II::MO_GOT_CALL:  Kind = MCSymbolRefExpr::VK_Cpu0_GOT_CALL; break;
   case Cpu0II::MO_GOT16:     Kind = MCSymbolRefExpr::VK_Cpu0_GOT16; break;
   case Cpu0II::MO_GOT:       Kind = MCSymbolRefExpr::VK_Cpu0_GOT; break;
 // ABS_HI and ABS_LO is for llc -march=cpu0 -relocation-model=static (global 
@@ -81,68 +80,6 @@ MCOperand Cpu0MCInstLower::LowerSymbolOperand(const MachineOperand &MO,
   const MCConstantExpr *OffsetExpr =  MCConstantExpr::Create(Offset, *Ctx);
   const MCBinaryExpr *AddExpr = MCBinaryExpr::CreateAdd(MCSym, OffsetExpr, *Ctx);
   return MCOperand::CreateExpr(AddExpr);
-}
-
-static void CreateMCInst(MCInst& Inst, unsigned Opc, const MCOperand& Opnd0,
-                         const MCOperand& Opnd1,
-                         const MCOperand& Opnd2 = MCOperand()) {
-  Inst.setOpcode(Opc);
-  Inst.addOperand(Opnd0);
-  Inst.addOperand(Opnd1);
-  if (Opnd2.isValid())
-    Inst.addOperand(Opnd2);
-}
-
-// Lower ".cpload $reg" to
-//  "lui   $gp, %hi(_gp_disp)"
-//  "addiu $gp, $gp, %lo(_gp_disp)"
-//  "addu  $gp, $gp, $t9"
-void Cpu0MCInstLower::LowerCPLOAD(SmallVector<MCInst, 4>& MCInsts) {
-  MCOperand GPReg = MCOperand::CreateReg(Cpu0::GP);
-  MCOperand T9Reg = MCOperand::CreateReg(Cpu0::T9);
-  MCOperand ZEROReg = MCOperand::CreateReg(Cpu0::ZERO);
-  StringRef SymName("_gp_disp");
-  const MCSymbol *Sym = Ctx->GetOrCreateSymbol(SymName);
-  const MCSymbolRefExpr *MCSym;
-
-  MCSym = MCSymbolRefExpr::Create(Sym, MCSymbolRefExpr::VK_Cpu0_ABS_HI, *Ctx);
-  MCOperand SymHi = MCOperand::CreateExpr(MCSym);
-  MCSym = MCSymbolRefExpr::Create(Sym, MCSymbolRefExpr::VK_Cpu0_ABS_LO, *Ctx);
-  MCOperand SymLo = MCOperand::CreateExpr(MCSym);
-
-  MCInsts.resize(3);
-
-  CreateMCInst(MCInsts[0], Cpu0::LUi, GPReg, ZEROReg, SymHi);
-  CreateMCInst(MCInsts[1], Cpu0::ADDiu, GPReg, GPReg, SymLo);
-  CreateMCInst(MCInsts[2], Cpu0::ADD, GPReg, GPReg, T9Reg);
-}
-
-// Lower ".cprestore offset" to "st $gp, offset($sp)".
-void Cpu0MCInstLower::LowerCPRESTORE(int64_t Offset,
-                                     SmallVector<MCInst, 4>& MCInsts) {
-  assert(isInt<32>(Offset) && (Offset >= 0) &&
-         "Imm operand of .cprestore must be a non-negative 32-bit value.");
-
-  MCOperand SPReg = MCOperand::CreateReg(Cpu0::SP), BaseReg = SPReg;
-  MCOperand GPReg = MCOperand::CreateReg(Cpu0::GP);
-  MCOperand ZEROReg = MCOperand::CreateReg(Cpu0::ZERO);
-
-  if (!isInt<16>(Offset)) {
-    unsigned Hi = ((Offset + 0x8000) >> 16) & 0xffff;
-    Offset &= 0xffff;
-    MCOperand ATReg = MCOperand::CreateReg(Cpu0::AT);
-    BaseReg = ATReg;
-
-    // lui   at,hi
-    // add   at,at,sp
-    MCInsts.resize(2);
-    CreateMCInst(MCInsts[0], Cpu0::LUi, ATReg, ZEROReg, MCOperand::CreateImm(Hi));
-    CreateMCInst(MCInsts[1], Cpu0::ADD, ATReg, ATReg, SPReg);
-  }
-
-  MCInst St;
-  CreateMCInst(St, Cpu0::ST, GPReg, BaseReg, MCOperand::CreateImm(Offset));
-  MCInsts.push_back(St);
 }
 
 MCOperand Cpu0MCInstLower::LowerOperand(const MachineOperand& MO,
