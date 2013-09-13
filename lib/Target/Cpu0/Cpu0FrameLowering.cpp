@@ -14,7 +14,6 @@
 #include "Cpu0FrameLowering.h"
 #include "Cpu0InstrInfo.h"
 #include "Cpu0MachineFunction.h"
-#include "MCTargetDesc/Cpu0BaseInfo.h"
 #include "llvm/IR/Function.h"
 #include "llvm/CodeGen/MachineFrameInfo.h"
 #include "llvm/CodeGen/MachineFunction.h"
@@ -102,7 +101,7 @@ void Cpu0FrameLowering::emitPrologue(MachineFunction &MF) const {
   unsigned SP = Cpu0::SP;
   unsigned FP = Cpu0::FP;
   unsigned ZERO = Cpu0::ZERO;
-  unsigned ADDu = Cpu0::ADDu;
+  unsigned ADD = Cpu0::ADD;
   unsigned ADDiu = Cpu0::ADDiu;
   // First, compute final stack size.
   unsigned StackAlign = getStackAlignment();
@@ -169,7 +168,7 @@ void Cpu0FrameLowering::emitPrologue(MachineFunction &MF) const {
   // if framepointer enabled, set it to point to the stack pointer.
   if (hasFP(MF)) {
     // Insert instruction "move $fp, $sp" at this location.
-    BuildMI(MBB, MBBI, dl, TII.get(ADDu), FP).addReg(SP).addReg(ZERO);
+    BuildMI(MBB, MBBI, dl, TII.get(ADD), FP).addReg(SP).addReg(ZERO);
 
     // emit ".cfi_def_cfa_register $fp"
     MCSymbol *SetFPLabel = MMI.getContext().CreateTempSymbol();
@@ -198,7 +197,7 @@ void Cpu0FrameLowering::emitEpilogue(MachineFunction &MF,
   unsigned SP = Cpu0::SP;
   unsigned FP = Cpu0::FP;
   unsigned ZERO = Cpu0::ZERO;
-  unsigned ADDu = Cpu0::ADDu;
+  unsigned ADD = Cpu0::ADD;
   unsigned ADDiu = Cpu0::ADDiu;
 
   // if framepointer enabled, restore the stack pointer.
@@ -210,7 +209,7 @@ void Cpu0FrameLowering::emitEpilogue(MachineFunction &MF,
       --I;
 
     // Insert instruction "move $sp, $fp" at this location.
-    BuildMI(MBB, I, dl, TII.get(ADDu), SP).addReg(FP).addReg(ZERO);
+    BuildMI(MBB, I, dl, TII.get(ADD), SP).addReg(FP).addReg(ZERO);
   }
 
   // Get the number of bytes from FrameInfo
@@ -278,4 +277,5 @@ processFunctionBeforeCalleeSavedScan(MachineFunction &MF,
     MRI.setPhysRegUnused(Cpu0::LR);
   }
 }
+
 
