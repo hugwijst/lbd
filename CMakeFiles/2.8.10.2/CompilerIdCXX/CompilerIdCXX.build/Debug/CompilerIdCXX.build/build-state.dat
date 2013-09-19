@@ -1,0 +1,68 @@
+TCompilerIdCXX
+v5
+r1
+cCheck dependencies
+cCompileC ./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX normal i386
+cPhaseScriptExecution "Run Script" /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+
+N/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX
+t2
+s0
+
+N/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o
+t2
+s0
+
+N/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CompilerIdCXX.LinkFileList
+c000000005239ACD400000000000000B1
+t1379511508
+s177
+
+N/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+c000000005239ACD4000000000000002A
+t1379511508
+s42
+
+N/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+c000000005239ACD30000000000002E22
+t1379511507
+s11810
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesf3acf453e4e9b741^596c0354e4e9b741^---0#1#0#--18"Check dependencies36"133EC7CE-4677-4D54-B76D-38C9ED0F450C-
+
+CCompileC ./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s401204308.019491
+e401204308.043666
+r1
+xCompileC
+x./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o
+x/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"Compile /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp3b370554e4e9b741^622c0b54e4e9b741^---0#0#0#-19%DVTDocumentLocation2@126"file://localhost/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp0000000000000000^2791"CompileC ./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o CMakeCXXCompilerId.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.hmap -I/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/DerivedSources/i386 -I/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/DerivedSources -F/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX -MMD -MT dependencies -MF /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.d --serialize-diagnostics /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.dia -c /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp -o /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o36"F88E4A8B-D673-47DD-8499-8558BF85DDED-
+
+CLd /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX normal i386
+s401204308.050548
+e401204308.079729
+r1
+xLd
+x/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX
+xnormal
+xi386
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Link /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXXfb070d54e4e9b741^ba681454e4e9b741^---0#0#0#--716"Ld ./CompilerIdCXX normal i386    cd /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -L/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX -F/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX -filelist /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CompilerIdCXX.LinkFileList -o /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX36"D495A202-15AF-4AA4-9AC0-64DAE411A2D1-
+
+CPhaseScriptExecution "Run Script" /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+s401204308.088169
+e401204308.116184
+r1
+xPhaseScriptExecution
+xRun Script
+x/Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+oGCC_VERSION=com.apple.compilers.llvm.clang.1_0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Run custom shell script 'Run Script'1e891754e4e9b741^66c01d54e4e9b741^-47"GCC_VERSION=com.apple.compilers.llvm.clang.1_01(21%IDEActivityLogMessage2@47"GCC_VERSION=com.apple.compilers.llvm.clang.1_0-401204308#0#47#-0#-----0#0#0#--398"PhaseScriptExecution "Run Script" ./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh    cd /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX    /bin/sh -c /Users/mauricedaverveldt/Projects/llvm/xcode/cpu0/lbd/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh36"FBADF1C6-5BD8-47C3-A8FB-B8D2BE946DE8-
+
