@@ -221,6 +221,25 @@ SDNode* Cpu0DAGToDAGISel::Select(SDNode *Node) {
   switch(Opcode) {
   default: break;
 
+  case ISD::ADDC:
+  case ISD::ADDE: {
+    SDValue Op1 = N->getOperand(0);
+    SDValue Op2 = N->getOperand(0);
+
+    SDValue TopPart;
+    if (N->getOpcode() == ISD::SDIV) {
+      TopPart = SDValue(CurDAG->getMachineNode(SP::SRAri, dl, MVT::i32, DivLHS,
+                                   CurDAG->getTargetConstant(31, MVT::i32)), 0);
+    } else {
+      TopPart = CurDAG->getRegister(SP::G0, MVT::i32);
+    }
+    TopPart = SDValue(CurDAG->getMachineNode(SP::WRYrr, dl, MVT::Glue, TopPart,
+                                     CurDAG->getRegister(SP::G0, MVT::i32)), 0);
+    unsigned Opcode = N->getOpcode() == ISD::SDIV ? SP::SDIVrr : SP::UDIVrr;
+
+    return CurDAG->SelectNodeTo(N, Opcode, MVT::i32, Op1, Op2, TopPart);
+  }
+
   case ISD::MULHS:
   case ISD::MULHU: {
     MultOpc = (Opcode == ISD::MULHU ? Cpu0::MULTu : Cpu0::MULT);
